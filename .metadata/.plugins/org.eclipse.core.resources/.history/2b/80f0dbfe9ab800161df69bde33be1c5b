@@ -1,0 +1,55 @@
+
+public class TVProgrammes {
+		
+		private String Title;
+		private String Series;
+		private String Episode;
+		int YearOfRelease;
+		private String Studio;
+		private String Channel;
+		int StarRating;
+		public String getTitle() {
+			return Title;
+		
+		public void setTVProgrammes(String Title, String Series, String Episode, int YearOfRelease, String Studio, String Channel,int StarRating){
+			
+			this.Title = Title;
+			this.Series = Series;
+			this.Episode = Episode;
+			this.YearOfRelease = YearOfRelease;
+			this.Studio = Studio;
+			this.Series = Channel;
+			this.StarRating = StarRating;
+		}
+		public String getTitle(){
+			return Title;
+		}
+		
+		public String getSeries(){
+			return Series;
+		}
+		
+		public String getEpisode(){
+			return Episode;
+		}
+		public int getYearOfRelease(){
+			return YearOfRelease;
+		}
+		
+		
+		public String getStudio(){
+			return Studio;
+		}
+		
+		public String getChannel(){
+			return Channel;
+		}
+		
+			
+		public int getStarRating(){
+			return StarRating;
+		}
+
+	}
+
+

@@ -1,0 +1,14 @@
+import javax.swing.JFrame;
+
+public class MediaCatalogue {
+	
+	public MediaCatalogue(){
+		JFrame window = new JFrame(); 
+		window.setSize(640, 720);
+		window.setTitle("Media Catalogue");
+		window.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		window.setVisible(true);
+		
+	}
+
+}

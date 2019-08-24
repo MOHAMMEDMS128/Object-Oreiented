@@ -1,0 +1,68 @@
+
+public class TVProgrammes {
+		// Attributes
+		private String Title;
+		private String Series;
+		private String Episode;
+		int YearOfRelease;
+		private String Studio;
+		private String Channel;
+		double StarRating;
+		
+		
+		public String getTitle() {
+			return Title;
+		} // getTitle
+		public void setTitle(String title) {
+			Title = title;
+		} // setTitle
+			
+		public String getSeries(){
+			return Series;
+		} // getSeries
+		public void setSeries(String series){
+			Series = series;
+		} // setSeries
+		
+		public String getEpisode(){
+			return Episode;
+		} // getEpisode
+		public void setEpisode(String episode){
+			Episode = episode;
+		} // setEpisode
+		
+		public int getYearOfRelease(){
+			return YearOfRelease;
+		} // getYearOfRelease
+		public void setYearOfRelease(int yearofrelease){
+			YearOfRelease = yearofrelease;
+		}
+		
+		
+		public String getStudio(){
+			return Studio;
+		}
+		public void setStudio(String studio){
+			Studio = studio;
+		}
+		
+		public String getChannel(){
+			return Channel;
+		}
+		public void setChannel(String channel){
+			Channel = channel;
+		}
+			
+		public double getStarRating(){
+			return StarRating;
+		}
+		public void setStarRating(double starrating){
+			StarRating = starrating;
+		}
+		
+		
+		
+
+	}
+
+

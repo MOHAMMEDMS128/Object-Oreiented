@@ -1,0 +1,54 @@
+
+public class AudioTracks {
+
+		
+		private String Title;
+		private String ArtistBand;
+		int YearOfRelease;
+		double Duration;
+		private String RecordLabel;
+		int StarRating;
+		
+
+		public String getTitle() {
+			return Title;
+		}
+		public void setTitle(String title) {
+			Title = title;
+		}
+		
+		public String getArtistBand(){
+			return ArtistBand;
+		}
+		public void setArtistBand(String artistband){
+			ArtistBand = artistband;
+		}
+		
+		public int getYearOfRelease(){
+			return YearOfRelease;
+		}
+		public void setYearOfRelease(int yearofrelease){
+			YearOfRelease = yearofrelease;
+		}
+		public double getDuration(){
+			return Duration;
+		}
+		public void setDuration(int duration){
+			Duration = duration;
+		}
+		public String getRecordLabel (){
+			return RecordLabel;
+		}
+		public void setRecordLabel(String recordlabel){
+			RecordLabel = recordlabel;
+		}
+				
+		public int getStarRating(){
+			return StarRating;
+		}
+		public void setStarRating(int starrating){
+			StarRating = starrating;
+		}
+
+	}
+

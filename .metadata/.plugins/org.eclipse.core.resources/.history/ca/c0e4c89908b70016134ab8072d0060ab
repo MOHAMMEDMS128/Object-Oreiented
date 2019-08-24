@@ -1,0 +1,46 @@
+
+public class Films {
+	
+	private String Title           = "";
+	int YearOfRelease              = 0;
+	double Duration                   = 0;
+	private String Studio          = "";
+	private String Director        = "";
+	int StarRating                 = 0;
+	
+	
+	public void setFilms(String Title, int YearOfRelease, int Duration, String Studio, String Director,int StarRating){
+		
+		this.Title = Title;
+		this.YearOfRelease = YearOfRelease;
+		this.Duration = Duration;
+		this.Studio = Studio;
+		this.Director = Director;
+		this.StarRating = StarRating;
+	}
+	public String getTitle(){
+		return Title;
+	}
+	
+	public int getYearOfRelease(){
+		return YearOfRelease;
+	}
+	
+	public double getDuration(){
+		return Duration;
+	}
+	
+	public String getStudio(){
+		return Studio;
+	}
+	
+	public String getDirector(){
+		return Director;
+	}
+	
+	public int getStarRating(){
+		return StarRating;
+	}
+
+}
+

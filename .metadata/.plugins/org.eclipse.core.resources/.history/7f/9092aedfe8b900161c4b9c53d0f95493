@@ -1,0 +1,73 @@
+
+public class TVProgrammes {
+		
+		private String Title;
+		private String Series;
+		private String Episode;
+		int YearOfRelease;
+		private String Studio;
+		private String Channel;
+		int StarRating;
+		
+		
+		public void setTVProgrammes(String Title, String Series, String Episode, int YearOfRelease, String Studio, String Channel,int StarRating){
+			
+			this.Title = Title;
+			this.Series = Series;
+			this.Episode = Episode;
+			this.YearOfRelease = YearOfRelease;
+			this.Studio = Studio;
+			this.Series = Channel;
+			this.StarRating = StarRating;
+		}
+		public String getTitle() {
+			return Title;
+		}
+		public void setTitle(String title) {
+			Title = title;
+		}
+			
+		public String getSeries(){
+			return Series;
+		}
+		public void setSeries(String series){
+			Series = series;
+		}
+		
+		public String getEpisode(){
+			return Episode;
+		}
+		public void setEpisode(String episode){
+			Episode = episode;
+		}
+		
+		public int getYearOfRelease(){
+			return YearOfRelease;
+		}
+		public void setYearOfRelease(int yearofrelease){
+			YearOfRelease = yearofrelease;
+		}
+		
+		
+		public String getStudio(){
+			return Studio;
+		}
+		public void seStudio(String studio){
+			Studio = studio;
+		}
+		
+		public String getChannel(){
+			return Channel;
+		}
+		public void setChannel(String channel){
+			Channel = channel;
+		}
+			
+		public int getStarRating(){
+			return StarRating;
+		}
+		
+
+	}
+
+

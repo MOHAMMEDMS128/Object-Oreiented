@@ -1,0 +1,647 @@
+import java.util.Scanner;
+import java.util.ArrayList;
+
+public class MediaCatalogue1 {
+	
+	// public variables for use through the class 
+	public static Scanner in = new Scanner(System.in);
+	public static ArrayList<Films> myFilms = new ArrayList<Films>();
+	public static ArrayList<AudioTracks> myAudioTracks = new ArrayList<AudioTracks>();
+	public static ArrayList<TVProgrammes> myTVProgrammes = new ArrayList<TVProgrammes>();
+	
+	public static void main(String[] args) {
+		
+		// Local variables for use within the main method
+		int menu = 0;
+		
+		
+		
+		do{ 
+			// Print Media Catalogue to the screen that outline the various function of my software 
+			System.out.println("||==========================||");
+			System.out.println("||***** Media Catalogue*****||");
+			System.out.println("||==========================||");
+			System.out.println("||**************************||");
+			System.out.println("|| ****  Films  Menu    ****||");
+			System.out.println("||**************************||");
+			System.out.println("|| 1. Add a Film            ||");
+			System.out.println("|| 2. List Films            ||");
+			System.out.println("|| 3. Search Films          ||");
+			System.out.println("|| 4. Delete a Film         ||");
+			System.out.println("|| 5. Edit a Film           ||");
+			System.out.println("||**************************||");
+			System.out.println("||**** Audio Tracks Menu****||");
+			System.out.println("||**************************||");
+			System.out.println("|| 6. Add Audio Tracks      ||");
+			System.out.println("|| 7. List Audio Tracks     ||");
+			System.out.println("|| 8. Search Audio Tracks   ||");
+			System.out.println("|| 9. Delete an Audio Tracks||");
+			System.out.println("|| 10. Edit an Audio Tracks ||");
+			System.out.println("||**************************||");
+			System.out.println("||*** TV Programmes Menu ***||");
+			System.out.println("||**************************||");
+			System.out.println("|| 11. Add a TV Programmes  ||");
+			System.out.println("|| 12. List TV Programmes   ||");
+			System.out.println("|| 13. Search TV Programmes ||");
+			System.out.println("|| 14. Delete a TV programme||");
+			System.out.println("|| 15. Edit a TV programme  ||");
+			System.out.println("||==========================||");
+			System.out.println("||   Enter a Menu Choice    ||");
+			System.out.println("||==========================||");
+			 Scanner in = extracted();
+			menu = in.nextInt(); // records the user choice
+			//  switches to process the user choice
+			switch(menu){
+			case 1:
+				// call the method within this 'MediaCatalogue1' class to create a new film
+				createFilms();
+				break;
+				
+			case 2:
+				// call the method within this 'MediaCatalogue1' that lists the films in the Array list.
+				listFilms();
+				break;
+				
+			case 3:
+				 // call the method within this 'MediaCatalogue1' class to search for a film
+				findFilm();
+				break;
+				
+			case 4:
+				deleteFilm();
+				break;
+			
+			case 5:
+				editFilms();
+				break;
+				
+				
+			case 6: // // call the method within this 'MediaCatalogue1' class to create a new audio tracks
+				createAudioTracks();
+				break;
+				
+			case 7:  // call the method within this 'MediaCatalogue1' that lists the audio tracks in the Array list.
+				listAudioTracks();
+				break;
+				
+			case 8: // call the method within this 'MediaCatalogue1' class to search for an audio track.
+				findAudioTracks();
+				break;
+				
+			case 9:
+				deleteAudioTracks();
+				break;
+				
+			case 10:
+				editAudioTracks();
+				break;
+			
+			case 11:// call the method within this 'MediaCatalogue1' class to create a new TV programme
+				createTVProgrammes();
+				break;
+				
+			case 12:  // call the method within this 'MediaCatalogue1' that lists TV the programmes in the Array list.
+				listTVProgrammes();
+				break;
+				
+			case 13: // call the method within this 'MediaCatalogue1' class to search for a TV programme.
+				findTVProgrammes();
+				break;
+				
+			case 14:
+				deleteTVProgrammes();
+				break;
+				
+			case 15:
+				editTVProgrammes();
+				break;
+			
+		} // end of switches
+	
+	}while(menu !=0); // end of loop
+		
+} // end of main method
+
+
+private static void deleteTVProgrammes() {
+	/*  Asks the user to input a TV Programme's title in order to delete it 
+	 * after deleted it 'TV Programme deleted' will be displayed.
+	 */
+		System.out.print("Enter TV Programme's Title to remove: ");
+		String TVProgrammesTitle = in.nextLine();
+	    
+
+	    for (int i = myTVProgrammes.size() - 1; i >= 0; --i) {
+	    	
+	        if (myTVProgrammes.get(i).getTitle().equals(TVProgrammesTitle)) {
+	            System.out.println("Found TV Programmes" + i);
+	            myTVProgrammes.remove(i);
+	            System.out.println("TV Programme Deleted");
+	        } // end if
+	        
+	    } // end for  
+			
+	} // end deleteTVProgrammes
+
+		
+
+
+
+private static void deleteAudioTracks() {
+	/*  Asks the user to input an Audio Track's title in order to delete it 
+	 * after deleted it 'Audio Track Deleted' will be displayed.
+	 */
+	System.out.print("Enter Audio Track's Title to remove: ");
+	String AudioTracksTitle = in.nextLine();
+    
+
+    for (int i = myAudioTracks.size() - 1; i >= 0; --i) {
+    	
+        if (myAudioTracks.get(i).getTitle().equals(AudioTracksTitle)) {
+            System.out.println("Found Audio Track" + i);
+            myAudioTracks.remove(i);
+            System.out.println("Audio Track Deleted");
+        } // end if
+        
+    } // end for  
+		
+} // end of deleteAudioTracks
+		
+	
+
+
+private static void deleteFilm() {
+	/*  Asks the user to input a Film's title in order to delete it 
+	 * after deleted it 'Film Deleted' will be displayed.
+	 */
+	System.out.print("Enter Fiml's Title to remove: ");
+	String FilmsTitle = in.nextLine();
+    
+
+    for (int i = myFilms.size() - 1; i >= 0; --i) {
+    	
+        if (myFilms.get(i).getTitle().equals(FilmsTitle)) {
+            System.out.println("Found Film " + i);
+            myFilms.remove(i);
+            System.out.println("Film Deleted");
+        } // end if
+        
+    } // end for  
+		
+} // end deleteFilms
+
+
+private static void findTVProgrammes() {
+	/* Asks the user to input a TV programme's title 
+	 * in order to search through the myTVProgrammes Array list  
+	 * in order to see if a TV programme exists. If there is a match, 
+	 * TV programmes details are displayed on the screen.
+	 *  if not the message "Not Found" will be displayed in the screen.
+	 */
+		
+	System.out.println("Enter TV Programmes Title: ");
+	Scanner in=extracted();
+	String TVProgrammesTitle = in.nextLine();
+	
+	
+	for (int i = 0; i< myTVProgrammes.size(); i++){
+	
+		if (myTVProgrammes.get(i).getTitle().equals(TVProgrammesTitle))
+		{
+			System.out.println( myTVProgrammes.get(i).getTitle() + " " +
+					myTVProgrammes.get(i).getSeries() + " " +
+					myTVProgrammes.get(i).getEpisode() + " " +
+					myTVProgrammes.get(i).getYearOfRelease() + " " +
+					myTVProgrammes.get(i).getStudio() + " " +
+					myTVProgrammes.get(i).getChannel() + " " +
+					myTVProgrammes.get(i).getStarRating() + "\n  " );
+		} // End if
+		else
+		{
+			System.out.println("Not found");
+			} // End else
+		
+		} // end if 
+	
+	} // end of findTVProgrammes
+	
+
+
+private static void findAudioTracks() {
+	/* Asks the user to input an audio track's title 
+	 * in order to search through the myAudioTrackss Array list  
+	 * in order to see if an Audio Track exists. If there is a match, 
+	 * audio track details are displayed on the screen.
+	 *  if not the message "Not Found" will be displayed in the screen.
+	 */
+		
+	System.out.println("Enter Audio Tracks Title: ");
+	String AudioTracksTitle = extracted().nextLine();
+	
+	
+	for (int i = 0; i< myAudioTracks.size(); i++){
+	
+		if (myAudioTracks.get(i).getTitle().equals(AudioTracksTitle))
+		{
+	
+	System.out.println( myAudioTracks.get(i).getTitle() + " " +
+						myAudioTracks.get(i).getArtistBand() + " " +
+						myAudioTracks.get(i).getYearOfRelease() + " " + 
+						myAudioTracks.get(i).getDuration() + " " +
+						myAudioTracks.get(i).getRecordLabel() + " " +
+						myAudioTracks.get(i).getStarRating() + "\n" );
+		} // end if
+	else
+	{
+		System.out.println("Not found");
+			} // end else
+	
+		} // end for 
+
+	} // end findAudioTracks
+
+
+
+
+private static Scanner extracted() {
+	return new Scanner(System.in);
+} // end Scanner extracted
+
+private static void listTVProgrammes() {
+	/* list all the TV programmes in the ArrayList by looping through the elements
+	 * and using the various 'get'methods in the super and sub class to
+	 * access the data we need by using the 'get' method of the
+	 * ArrayList myTVProgrammes and then calling the methods we need from the objects.
+	 */
+		
+	for (TVProgrammes i: MediaCatalogue1.myTVProgrammes)
+	{
+		System.out.println(i.getTitle()
+				
+				+"\n "+ 
+				i.getSeries() + "  "+ 
+				i.getEpisode() + "  "+ 
+				i.getYearOfRelease() + "  "+ 
+				i.getStudio() + " "+
+				i.getChannel() + " "+
+				i.getStarRating()
+			);
+	} // end for
+		
+} // end listTVProgrammes
+
+
+private static void listAudioTracks() {
+	/* list all the audio tracks in the ArrayList by looping through the elements
+	 * and using the various 'get'methods in the super and sub class to
+	 * access the data we need by using the 'get' method of the
+	 * ArrayList myAudioTracks and then calling the methods we need from the objects.
+	 */
+	
+		for (AudioTracks i: MediaCatalogue1.myAudioTracks)
+		{
+			System.out.println(i.getTitle()
+					+"\n "+ 
+					i.getArtistBand() + " "+
+					i.getYearOfRelease() + "  "+ 
+					i.getDuration() + " "+
+					i.getRecordLabel() + " "+
+					i.getStarRating()
+			);
+	} // end for
+		
+} // end listAudioTracks
+	
+		
+
+private static void createTVProgrammes() {
+	/* this method will create a new TV programme object (called newtvprogrammes),
+	 * in this 'createTVProgrammes' method, we ask the user to input the values 
+	 * we need in order to create our 'newtvprogrammes'
+	 */
+	
+	Scanner in = extracted();
+	TVProgrammes newtvprogrammes = new TVProgrammes();
+	System.out.println("Title");
+	String title = in.nextLine();
+	newtvprogrammes.setTitle(title);
+	System.out.println("Series");
+	String series = in.nextLine();
+	newtvprogrammes.setSeries(series);
+	System.out.println("Episode");
+	String episode = in.nextLine();
+	newtvprogrammes.setEpisode(episode);
+	System.out.println("Year Of Release");
+	int yearofrelease = in.nextInt();
+	newtvprogrammes.setYearOfRelease(yearofrelease);
+	
+	System.out.println("Studio");
+	String studio = in.next();
+	newtvprogrammes.setStudio(studio);
+	
+	System.out.println("Channel");
+	String channel = in.next();
+	newtvprogrammes.setChannel(channel);
+	
+	System.out.println("Star Rating");
+	int starrarating = in.nextInt();
+	newtvprogrammes.setStarRating(starrarating);
+	
+	MediaCatalogue1.myTVProgrammes.add(newtvprogrammes); // add our 'newtvprogrammes' to the ArrayList called 'myTVProgrammes' we need from the object
+
+} // end of createTVProgrammes
+
+private static void editTVProgrammes(){
+	listTVProgrammes();
+	System.out.print("Enter TV Programme's Title to edit: ");
+	String TVProgrammesTitle = in.nextLine();
+    
+
+    for (int i = myTVProgrammes.size() - 1; i >= 0; --i) {
+    	
+        if (myTVProgrammes.get(i).getTitle().equals(TVProgrammesTitle)) {
+            System.out.println("Found TV Programmes " + i);
+            TVProgrammes newtvprogrammes = new TVProgrammes();
+            System.out.println("Title");
+        	String title = in.nextLine();
+        	newtvprogrammes.setTitle(title);
+        	System.out.println("Series");
+        	String series = in.nextLine();
+        	newtvprogrammes.setSeries(series);
+        	System.out.println("Episode");
+        	String episode = in.nextLine();
+        	newtvprogrammes.setEpisode(episode);
+        	System.out.println("Year Of Release");
+        	int yearofrelease = in.nextInt();
+        	newtvprogrammes.setYearOfRelease(yearofrelease);
+        	
+        	System.out.println("Studio");
+        	String studio = in.next();
+        	newtvprogrammes.setStudio(studio);
+        	
+        	System.out.println("Channel");
+        	String channel = in.next();
+        	newtvprogrammes.setChannel(channel);
+        	
+        	System.out.println("Star Rating");
+        	int starrarating = in.nextInt();
+        	newtvprogrammes.setStarRating(starrarating);
+        	
+        	MediaCatalogue1.myTVProgrammes.set(i, newtvprogrammes);
+        }
+        	else
+		{
+			System.out.println("TV Programme Not found");
+			
+		} // end else
+		
+	} // end if
+	
+} // end for
+
+
+private static void createAudioTracks() {
+	/* this method will create a new audio track object (called newaudiotracks),
+	 * in this 'createAudioTracks' method, we ask the user to input the values 
+	 * we need in order to create our 'newaudiotracks'
+	 */
+	Scanner in = extracted();
+	AudioTracks newaudiotracks = new AudioTracks();
+	System.out.println("Title");
+	String title = in.nextLine();
+	newaudiotracks.setTitle(title);
+	System.out.println("Artist / Band");
+	String artistband = in.nextLine();
+	newaudiotracks.setArtistBand(artistband);
+	System.out.println("Year Of Release");
+	int yearofrelease = in.nextInt();
+	newaudiotracks.setYearOfRelease(yearofrelease);
+	//Please Enter Duration In Format Of Minutes
+	System.out.println("Duration");
+	int duration = in.nextInt();
+	newaudiotracks.setDuration(duration);
+	
+	System.out.println("RecordLabel");
+	String recordlabel= in.next();
+	in.nextLine();
+	newaudiotracks.setRecordLabel(recordlabel);
+	
+	
+	System.out.println("Star Rating");
+	int starrarating = in.nextInt();
+	newaudiotracks.setStarRating(starrarating);
+	
+	MediaCatalogue1.myAudioTracks.add(newaudiotracks); // add our 'newaudiotracks' to the ArrayList called 'myAudioTracks' we need from the object
+
+} // end createAudioTracks
+
+
+private static void editAudioTracks(){
+	listAudioTracks();
+	System.out.print("Enter Audio Track's Title, Year Of Release, Duration, Record Label OR Star Rating to edit: ");
+
+	String AudioTracksTitle = in.nextLine();
+    String AudioTracksArtistBand = in.nextLine();
+    int AudioTracksYearOfRelease = in.nextInt();
+    int AudioTracksDuration = in.nextInt();
+    String AudioTracksRecordLabel = in.nextLine();
+    int AudioTracksStarRating = in.nextInt();
+    for (AudioTracks i: MediaCatalogue1.myAudioTracks(- 1; i >= 0; --i) )
+     {
+    	AudioTracks newaudiotracks = new AudioTracks();
+        if (myAudioTracks.get(i).getTitle().equals(AudioTracksTitle)) {
+            System.out.println("Found Audio Track " + i);
+            System.out.println("Title");
+        	String title = in.nextLine();
+        	newaudiotracks.setTitle(title);
+        }
+        if (myAudioTracks.get(i).getArtistBand().equals(AudioTracksArtistBand)) {
+        	System.out.println("Found Audio Track " + i);
+        	System.out.println("Artist / Band");
+        	String artistband = in.nextLine();
+        	newaudiotracks.setArtistBand(artistband);
+        }
+        if (myAudioTracks.get(i).getYearOfRelease() ==(AudioTracksYearOfRelease)) {
+        	System.out.println("Found Audio Track " + i);
+        	System.out.println("Year Of Release");
+        	int yearofrelease = in.nextInt();
+        	newaudiotracks.setYearOfRelease(yearofrelease);
+        }
+        if (myAudioTracks.get(i).getDuration()==(AudioTracksDuration)) {
+        	System.out.println("Found Audio Track " + i);
+        //Please Enter Duration In Format Of Minutes
+        	System.out.println("Duration");
+        	int duration = in.nextInt();
+        	newaudiotracks.setDuration(duration);
+        }
+        if (myAudioTracks.get(i).getRecordLabel().equals(AudioTracksRecordLabel)) {
+        	System.out.println("Found Audio Track " + i);
+        	System.out.println("RecordLabel");
+        	String recordlabel= in.next();
+        	in.nextLine();
+        	newaudiotracks.setRecordLabel(recordlabel);
+        }
+        if (myAudioTracks.get(i).getStarRating()==(AudioTracksStarRating)) {
+        	System.out.println("Found Audio Track " + i);
+        	System.out.println("Star Rating");
+        	int starrarating = in.nextInt();
+        	newaudiotracks.setStarRating(starrarating);
+        	MediaCatalogue1.myAudioTracks.set(i, newaudiotracks);
+        }
+        	else
+		{
+			System.out.println("Audio Track Not found");
+			
+		} // end else
+    } // end for
+} // end editAudioTracks
+
+	
+private static void createFilms(){
+	/* this method will create a new film object (called newfilms),
+	 * in this 'createFilms' method, we ask the user to input the values 
+	 * we need in order to create our 'newfilms'
+	 */
+	 Scanner in = extracted();
+	Films newfilms = new Films();
+	System.out.println("Title");
+	String title = in.nextLine();
+	newfilms.setTitle(title);
+	System.out.println("Year Of Release");
+	int yearofrelease = in.nextInt();
+	newfilms.setYearOfRelease(yearofrelease);
+	//Please Enter Duration In Format Minutes
+	System.out.println("Duration");
+	int duration = in.nextInt();
+	newfilms.setDuration(duration);
+	
+	System.out.println("Studio");
+	String studio = in.next();
+	in.nextLine();
+	newfilms.setStudio(studio);
+	
+	System.out.println("Director");
+	String director = in.nextLine();
+	newfilms.setDirector(director);
+	System.out.println("Star Rating");
+	int starrarating = in.nextInt();
+	newfilms.setStarRating(starrarating);
+	
+	MediaCatalogue1.myFilms.add(newfilms); // add our 'newfilms' to the ArrayList called 'myFilms' we need from the object
+} // end of createFilms
+
+private static void listFilms(){
+	/* list all the films in the ArrayList by looping through the elements
+	 * and using the various 'get'methods in the super and sub class to
+	 * access the data we need by using the 'get' method of the
+	 * ArrayList myFilms and then calling the methods we need from the objects.
+	 */
+
+	for (Films i: MediaCatalogue1.myFilms)
+	{
+		System.out.println(i.getTitle()	+" "+ 
+				i.getYearOfRelease() + "  "+ 
+				i.getDuration() + " "+
+				i.getStudio() + " " +
+				i.getDirector() + " "+
+				i.getStarRating()
+		);
+	} // end for
+		
+	
+} // end listFilms
+
+private static void editFilms(){
+	listFilms();
+	System.out.print("Enter Fiml's Title to edit: ");
+	String FilmsTitle = in.nextLine();
+    
+
+    for (int i = myFilms.size() - 1; i >= 0; --i) {
+    	
+        if (myFilms.get(i).getTitle().equals(FilmsTitle)) {
+            System.out.println("Found Film " + i);
+            Films newfilms = new Films();
+            System.out.println("Title");
+        	String title = in.nextLine();
+        	newfilms.setTitle(title);
+        	System.out.println("Year Of Release");
+        	int yearofrelease = in.nextInt();
+        	newfilms.setYearOfRelease(yearofrelease);
+        	//Please Enter Duration In Format Minutes
+        	System.out.println("Duration");
+        	int duration = in.nextInt();
+        	newfilms.setDuration(duration);
+        	
+        	System.out.println("Studio");
+        	String studio = in.next();
+        	in.nextLine();
+        	newfilms.setStudio(studio);
+        	
+        	System.out.println("Director");
+        	String director = in.nextLine();
+        	newfilms.setDirector(director);
+        	System.out.println("Star Rating");
+        	int starrarating = in.nextInt();
+        	newfilms.setStarRating(starrarating);
+        	
+        	MediaCatalogue1.myFilms.set(i, newfilms);
+        }
+        	else
+		{
+			System.out.println("Film Not found");
+				} // end else
+		
+			} // end if
+	
+		} // end for
+	
+	
+
+
+private static void findFilm(){
+	/* Asks the user to input a Film Title 
+	 * in order to search through the myFilms Array list  
+	 * in order to see if a film exists. If there is a match, 
+	 * audio track details are displayed on the screen.
+	 *  if not the message "Not Found" will be displayed in the screen.
+	 */
+
+	System.out.println("Enter Film Title: ");
+	Scanner in=extracted();
+	String FilmTitle = in.nextLine();
+	
+	
+	for (int i = 0; i< myFilms.size(); i++){
+	{
+		if (myFilms.get(i).getTitle().equals(FilmTitle))
+		{
+			System.out.println( myFilms.get(i).getTitle() + " " +
+					myFilms.get(i).getYearOfRelease() + " " +
+					myFilms.get(i).getDuration() + " " +
+					myFilms.get(i).getStudio() + " " +
+					myFilms.get(i).getDirector() + " " +
+					myFilms.get(i).getStarRating() + "\n  " );
+		}
+		else
+		{
+			System.out.println("Not found");
+				} // end else
+		
+			} // end if
+	
+		} // end for
+	
+	} // end findFilms
+
+} // end class
+	
+	
+		
+	
+
+	
+	
+
+
+

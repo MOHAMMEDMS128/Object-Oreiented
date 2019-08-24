@@ -1,0 +1,51 @@
+
+public class Films {
+	
+	private String Title;
+	int YearOfRelease;
+	int Duration;
+	private String Studio;
+	private String Director;
+	int StarRating;
+	public String getTitle() {
+		return Title;
+	}
+	public void setTitle(String title) {
+		Title = title;
+	}
+	public int getYearOfRelease() {
+		return YearOfRelease;
+	}
+	public void setYearOfRelease(int yearOfRelease) {
+		YearOfRelease = yearOfRelease;
+	}
+	public int getDuration() {
+		return Duration;
+	}
+	public void setDuration(int duration) {
+		Duration = duration;
+	}
+	public String getStudio() {
+		return Studio;
+	}
+	public void setStudio(String studio) {
+		Studio = studio;
+	}
+	public String getDirector() {
+		return Director;
+	}
+	public void setDirector(String director) {
+		Director = director;
+	}
+	public int getStarRating() {
+		return StarRating;
+	}
+	public void setStarRating(int starRating) {
+		StarRating = starRating;
+	}
+	
+	
+	
+
+}
+

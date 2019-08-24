@@ -1,0 +1,4 @@
+1480840469723	Inline local variable 'in'
+1480840520992	Extract method 'extracted'
+1480855825359	Convert local variable 'f' to field
+1480858976081	Delete element
